@@ -68,13 +68,42 @@ public class ExemploArrayList {
              * Bloco da opção Alterar.
              */
             else if (opcao.equals("3")) {
+                   leitura = JOptionPane.showInputDialog("Qual nome deseja alterar?");
+                   int pos = lista.indexOf(leitura);
                    
+                   if(pos != -1){
+                       /** 
+                        * O nome foi encontrado
+                        * agora precisamos alterá-lo.
+                        */
+                       leitura = JOptionPane.showInputDialog("Qual o novo nome?");
+                       lista.set(pos, leitura);
+                       JOptionPane.showMessageDialog(null, "Nome alterado com sucesso");
+                       
+                   }else{
+                       JOptionPane.showMessageDialog(null, "Erro\n"
+                               + "O nome procurado não exite na lista");
+                   }                   
             } 
             /**
              * Bloco da opção Excluir.
              */
             else if (opcao.equals("4")) {
+                leitura = JOptionPane.showInputDialog("Qual nome deseja excluir?");
+                int pos = lista.indexOf(leitura);
+                   
+                if(pos != -1){
+                    /** 
+                     * O nome foi encontrado
+                     * agora precisamos excluí-lo.
+                     */
+                    lista.remove(pos);
+                    JOptionPane.showMessageDialog(null, "Nome excluído com sucesso");
 
+                }else{
+                    JOptionPane.showMessageDialog(null, "Erro\n"
+                            + "O nome procurado não exite na lista");
+                }
             } 
              /**
              * Bloco da opção Listar.
